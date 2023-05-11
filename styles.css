@@ -3,6 +3,7 @@
 :root {
   --black-color: #151515;
   --purple-color: #854dff;
+  --gray-color: #716f6f;
 }
 
 * {
@@ -18,7 +19,17 @@ html {
 body {
   background-color: hsl(0, 0%, 86%);
   font-family: "Poppins", sans-serif;
-	min-height: 100vh;
+  min-height: 100vh;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .ac {
@@ -30,6 +41,75 @@ body {
   border-radius: 2.4rem 2.4rem 10rem 2.4rem;
   width: 34.3rem;
   height: 48.6rem;
+  padding: 4.8rem 2.4rem;
+}
+
+.ac__fields {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.ac__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ac__field-group > label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gray-color);
+}
+
+.ac__field-group > input {
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #dcdcdc;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: 0.01em;
+  color: var(--black-color);
+}
+
+.ac__field-group > input:focus {
+  outline: none;
+  border: 0.1rem solid var(--purple-color);
+}
+
+.ac__submit-button-container {
+	width: 100;
+	margin: 3.2rem 0;
+}
+
+.ac__submit-button {
+	display: block;
+  background-color: var(--purple-color);
+  color: white;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+	margin: 0 auto;
+}
+
+.ac__submit-button:hover {
+	background-color: var(--black-color);
+}
+
+.seperator {
+  border-bottom: 0.1rem solid #dcdcdc;
+  width: 100%;
+	z-index: -1;
+	position: relative;
+	top: -3.2rem;
+}
+
+.ac__submit-icon {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .ac__result {
@@ -49,6 +129,6 @@ body {
 .attribution {
   position: absolute;
   bottom: 0;
-	margin: 0 auto;
-	width: 100%; 
+  margin: 0 auto;
+  width: 100%;
 }

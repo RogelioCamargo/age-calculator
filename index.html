@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-		<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="icon"
       type="image/png"
@@ -26,27 +26,38 @@
     </style>
   </head>
   <body>
-		<!-- Age Calculator -->
+    <!-- Age Calculator -->
     <main class="ac">
       <form class="ac__form">
-        <div>
-          <label for="day">Day</label>
-          <input type="number" id="day" name="day" placeholder="DD" />
+        <div class="ac__fields">
+          <div class="ac__field-group">
+            <label for="day">Day</label>
+            <input type="number" id="day" name="day" placeholder="DD" />
+          </div>
+          <div class="ac__field-group">
+            <label for="day">Month</label>
+            <input type="number" id="month" name="month" placeholder="MM" />
+          </div>
+          <div class="ac__field-group">
+            <label for="day">Year</label>
+            <input type="number" id="year" name="year" placeholder="YYYY" />
+          </div>
         </div>
-        <div>
-          <label for="day">Month</label>
-          <input type="number" id="month" name="month" placeholder="MM" />
+        <div class="ac__submit-button-container">
+          <button class="ac__submit-button">
+            <img
+              class="ac__submit-icon"
+              src="./assets/images/icon-arrow.svg"
+              alt="arrow"
+            />
+          </button>
+          <div class="seperator"></div>
         </div>
-        <div>
-          <label for="day">Year</label>
-          <input type="number" id="year" name="year" placeholder="YYYY" />
-        </div>
-        <button>Submit</button>
       </form>
       <div class="ac__result">
-        <p><span class="ac__result-variable">--</span>Years</p>
-        <p><span class="ac__result-variable">--</span>Months</p>
-        <p><span class="ac__result-variable">--</span>Days</p>
+        <p><span class="ac__result-variable">--</span>years</p>
+        <p><span class="ac__result-variable">--</span>months</p>
+        <p><span class="ac__result-variable">--</span>days</p>
       </div>
     </main>
     <footer class="attribution">
