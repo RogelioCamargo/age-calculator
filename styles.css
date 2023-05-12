@@ -129,7 +129,8 @@ button {
 .attribution {
   position: absolute;
   bottom: 0;
-  margin: 0 auto;
+	left: 0;
+  text-align: center;
   width: 100%;
 }
 
