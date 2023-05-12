@@ -55,7 +55,7 @@ button {
   gap: 0.4rem;
 }
 
-.ac__field-group > label {
+.ac__field-label {
   font-weight: 700;
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -64,7 +64,7 @@ button {
   color: var(--gray-color);
 }
 
-.ac__field-group > input {
+.ac__field-input {
   padding: 1.2rem 1.6rem;
   border-radius: 0.8rem;
   border: 0.1rem solid #dcdcdc;
@@ -75,7 +75,7 @@ button {
   color: var(--black-color);
 }
 
-.ac__field-group > input:focus {
+.ac__field-input:hover {
   outline: none;
   border: 0.1rem solid var(--purple-color);
 }
@@ -133,6 +133,23 @@ button {
   width: 100%;
 }
 
+.ac__field-label--error {
+  color: #ff5959;
+}
+
+.ac__field-input--error {
+  border: 1px solid #ff5959;
+}
+
+.ac__error-message {
+  color: #ff5959;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+	margin-top: 0.4rem;
+}
+
 @media only screen and (min-width: 768px) {
   .ac {
     width: 84rem;
@@ -142,12 +159,12 @@ button {
     padding: 5.6rem;
   }
 
-  .ac__field-group > label {
+  .ac__field-label {
     font-size: 1.4rem;
     line-height: 2.1rem;
   }
 
-  .ac__field-group > input {
+  .ac__field-input {
     padding: 1.2rem 2.4rem;
     font-size: 3.2rem;
     font-weight: 700;
