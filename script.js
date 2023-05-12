@@ -68,6 +68,7 @@ submitButton.addEventListener("click", (e) => {
 	// calculate age in terms of years, months, and days from birthday
 	const today = new Date();
 	const birthday = new Date(year, month - 1, day);
+	// calculate raw differences
 	const age = today.getFullYear() - birthday.getFullYear();
 	const monthDifference = today.getMonth() - birthday.getMonth();
 	const dayDifference = today.getDate() - birthday.getDate();
@@ -75,11 +76,17 @@ submitButton.addEventListener("click", (e) => {
 	let ageInMonths = monthDifference;
 	let ageInDays = dayDifference;
 
+	// adject years and months if birthday hasn't occurred this month
 	if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
 		ageInYears--;
 		ageInMonths = 12 + monthDifference;
-		ageInDays = 31 + dayDifference;
 	}
+	if (dayDifference < 0) {
+    ageInMonths--;
+		// calculate the number of days between today and last month
+    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+    ageInDays += (today - lastMonth) / (1000 * 60 * 60 * 24);
+  }
 
 	// display age
 	const ageDisplay = document.querySelector(".ac__result-years");
