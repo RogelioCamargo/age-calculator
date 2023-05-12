@@ -64,6 +64,30 @@ submitButton.addEventListener("click", (e) => {
     addErrorStyling();
     return;
   }
+
+	// calculate age in terms of years, months, and days from birthday
+	const today = new Date();
+	const birthday = new Date(year, month - 1, day);
+	const age = today.getFullYear() - birthday.getFullYear();
+	const monthDifference = today.getMonth() - birthday.getMonth();
+	const dayDifference = today.getDate() - birthday.getDate();
+	let ageInYears = age;
+	let ageInMonths = monthDifference;
+	let ageInDays = dayDifference;
+
+	if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+		ageInYears--;
+		ageInMonths = 12 + monthDifference;
+		ageInDays = 31 + dayDifference;
+	}
+
+	// display age
+	const ageDisplay = document.querySelector(".ac__result-years");
+	ageDisplay.textContent = ageInYears;
+	const ageDisplayMonths = document.querySelector(".ac__result-months");
+	ageDisplayMonths.textContent = ageInMonths;
+	const ageDisplayDays = document.querySelector(".ac__result-days");
+	ageDisplayDays.textContent = ageInDays;
 });
 
 function generateErrorMessage(field, message) {
