@@ -77,6 +77,15 @@ submitButton.addEventListener("click", (e) => {
     // calculate the number of days between today and last month
     const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
     ageInDays += (today - lastMonth) / (1000 * 60 * 60 * 24);
+    // (today - lastMonth) / (1000 * 60 * 60 * 24) calculates the number of days between two dates, today and lastMonth.
+
+    // breakdown of the calculation:
+    // (today - lastMonth) calculates the difference between the two dates in milliseconds.
+    // 1000 represents the number of milliseconds in a second.
+    // 60 represents the number of seconds in a minute.
+    // 60 represents the number of minutes in an hour.
+    // 24 represents the number of hours in a day.
+    // By dividing the difference in milliseconds by the product of these values, we convert the time difference into the number of days.
   }
 
   // display age
